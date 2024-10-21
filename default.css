@@ -763,6 +763,21 @@ ul.contact li a.icon-rss:before
 	float: left;
 }
 
+#limitless {
+	text-align: center;
+	color: #5d95b2;
+	background: #0;
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+}
+
+#limitless-description {
+	text-align: center;
+	color: #5d95b2;
+	background: #0;
+}
+
 #header-featured {
   position: relative;
   height: 30em;
