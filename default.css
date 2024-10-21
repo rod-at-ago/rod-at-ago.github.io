@@ -682,14 +682,51 @@ ul.contact li a.icon-rss:before
 	color: #FFF;
 }
 
-.column1,  .column2,  .column3,  .column4
+/* three column */
+
+.cols_3_0, .cols_3_1, .cols_3_2 {
+    width: 378px;
+}
+
+.cols_3_0,  .cols_3_1
+{
+	float: left;
+	margin-right: 24px;
+}
+
+.cols_3_2
+{
+	float: left;
+}
+
+/* four column */
+
+.cols_4_0,  .col_4_1,  .cols_4_2,  .cols_4_3
 {
 	width: 282px;
 }
 
-.column1,  .column2,  .column3
+.cols_4_0,  .cols_4_1
 {
-	width: 376px;
+	float: left;
+	margin-right: 24px;
+}
+
+.cols_4_2
+{
+	float: left;
+}
+
+.cols_4_3
+{
+	float: right;
+}
+
+/* original declaration */
+
+.column1,  .column2,  .column3,  .column4
+{
+	width: 282px;
 }
 
 .column1,  .column2
@@ -707,6 +744,25 @@ ul.contact li a.icon-rss:before
 {
 	float: right;
 }
+
+/* original declaration */
+
+.cols_3_0,  .cols_3_1,  .cols_3_2
+{
+	width: 378px;
+}
+
+.cols_3_0,  .cols_3_1
+{
+	float: left;
+	margin-right: 24px;
+}
+
+.cols_3_2
+{
+	float: left;
+}
+
 
 
 	#header-featured
