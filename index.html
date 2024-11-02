@@ -32,6 +32,7 @@ Released   : 20140331
     /><![endif]-->
   </head>
   <body>
+    <div id="loginStatus"></div>
     <div id="header-wrapper">
       <div id="header" class="container">
         <div id="logo">
@@ -153,5 +154,14 @@ Released   : 20140331
   <p>Design by: <a href="https://templated.co/">TEMPLATED.CO</a></p>
 </div>
 -->
+    <script>
+        // Check if the user is logged in by looking for the access token in localStorage
+        const accessToken = localStorage.getItem("accessToken");
+
+        if (!accessToken) {
+            // Display a login link if the user is not logged in
+            document.write("<a href='https://aieda.auth.us-east-2.amazoncognito.com/login?client_id=eenu341c285tqngtr37uocdps&response_type=code&scope=email+openid+profile&redirect_uri=https://aieda.technology/callback'>Login Here</a>");
+        }
+    </script>
   </body>
 </html>
