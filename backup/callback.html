@@ -1,0 +1,54 @@
+a<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        // Replace these constants with your Cognito details
+        const clientId = "eenu341c285tqngtr37uocdps";
+        const redirectUri = "https://aieda.technology/callback";
+        const tokenEndpoint = "https://aieda.auth.us-east-2.amazoncognito.com/oauth2/token";
+
+        // Extract the authorization code from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get('code');
+
+        if (authCode) {
+            // Prepare data for token exchange
+            const data = new URLSearchParams({
+                grant_type: "authorization_code",
+                client_id: clientId,
+                redirect_uri: redirectUri,
+                code: authCode
+            });
+
+            // Exchange the authorization code for tokens
+            fetch(tokenEndpoint, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: data
+            })
+            .then(response => response.json())
+            .then(tokens => {
+                // Store tokens in localStorage (or sessionStorage)
+                localStorage.setItem("accessToken", tokens.access_token);
+                localStorage.setItem("idToken", tokens.id_token);
+
+                // Redirect the user to the main page (or any protected resource)
+                window.location.href = "/index.html";  // Change to your main page
+            })
+            .catch(error => {
+                console.error("Error exchanging code for tokens:", error);
+                document.body.innerHTML = "<p>Failed to log in. Please try again.</p>";
+            });
+        } else {
+            console.error("Authorization code not found in URL.");
+            document.body.innerHTML = "<p>Authorization code not found. Please log in again.</p>";
+        }
+    </script>
+</body>
+</html>

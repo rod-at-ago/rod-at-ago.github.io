@@ -779,23 +779,64 @@ ul.contact li a.icon-rss:before
 }
 
 #header-featured {
-  position: relative;
-  height: 30em;
-  overflow: hidden;
+	position: relative;
+	height: 30em;
+	overflow: hidden;
 }
 
 #background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  background-size: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	transform: translate(-50%, -50%);
+	background-size: cover;
 }
+
+/**
+#header-featured {
+	position: relative;
+	width: 100%;
+	height: 100vh; 
+	overflow: hidden;
+	margin-top: 80px; 
+}
+
+#background-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	transform: translate(-50%, -50%);
+	object-fit: cover;
+	z-index: -1;
+}
+
+#limitless {
+	position: absolute;
+	top: var(--header-height);
+	left: 0;
+	width: 100%;
+	height: calc(100% - var(--header-height));
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+**/
 
 
 /**
